@@ -1,0 +1,12 @@
+.sidebar{
+    background-color: cornflowerblue;
+    width:200px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+li{
+    padding:5px;
+}

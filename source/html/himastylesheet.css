@@ -1,0 +1,47 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px; /**this is a comment!*/
+}
+a{
+    color: burlywood;
+}
+
+img{
+    width: 200px;
+}
+
+p span{
+    font-family: bold;
+}
+
+.header{
+    background-color: rgb(222, 87, 87);
+    position: fixed;
+    top:0px;
+    height: 60px;
+    padding: 0px 10px;
+    width: 100%;
+    font-size: 50px;
+    z-index: 10;
+}
+
+.content{
+    height: 200px;
+    position: absolute;
+    top: 60px;
+    padding: 10px;
+    z-index:0;
+}
+
+.content p{
+    width: 100%;
+}
+
+.footer{
+    background-color: rgb(78, 45, 109);
+    position: fixed;
+    bottom: 0px;
+    height: 60px;
+    width: 100%;
+    z-index:10 ;
+}
