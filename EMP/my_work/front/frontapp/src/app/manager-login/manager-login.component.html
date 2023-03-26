@@ -1,0 +1,82 @@
+<h2>Welcome Manager</h2>
+
+<!-- Form to accept/reject leave requests -->
+<h3>Leave Requests</h3>
+<form>
+  <table>
+    <thead>
+      <tr>
+        <th>Employee Name</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Reason</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Repeat for each leave request -->
+      <tr *ngFor="let leaveRequest of leaveRequests">
+        <td>{{ leaveRequest.employeeName }}</td>
+        <td>{{ leaveRequest.startDate }}</td>
+        <td>{{ leaveRequest.endDate }}</td>
+        <td>{{ leaveRequest.reason }}</td>
+        <td>{{ leaveRequest.status }}</td>
+        <td>
+          <button (click)="acceptLeaveRequest(leaveRequest)">Accept</button>
+          <button (click)="rejectLeaveRequest(leaveRequest)">Reject</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+
+<!-- Form to assign tasks -->
+<h3>Assign Tasks</h3>
+<form [formGroup]="assignTaskForm" (ngSubmit)="assignTask()">
+  <label>
+    Task Name:
+    <input type="text" name="taskName" formControlName="taskName" required>
+  </label>
+  <br>
+  <label>
+    Employee Name:
+    <select name="employeeName" formControlName="employeeName" required>
+      <option value="">-- Select Employee --</option>
+      <option *ngFor="let employee of employees" [value]="employee">{{ employee }}</option>
+    </select>
+  </label>
+  <br>
+  <button type="submit" [disabled]="assignTaskForm.invalid">Assign Task</button>
+</form>
+
+<!-- Form to check task status -->
+<h3>Check Task Status</h3>
+<form>
+  <table>
+    <thead>
+      <tr>
+        <th>Task Name</th>
+        <th>Employee Name</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Repeat for each task assigned to this manager -->
+      <tr *ngFor="let task of tasks">
+        <td>{{ task.name }}</td>
+        <td>{{ task.employeeName }}</td>
+        <td>{{ task.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+
+<!-- Display list of employees assigned to this manager -->
+<h3>Employees Assigned</h3>
+<ul>
+  <li *ngFor="let employee of employees">{{ employee }}</li>
+</ul>
+<form>
+  <input type="button" value="Logout" (click)="logout()">
+</form>

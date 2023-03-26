@@ -1,0 +1,73 @@
+<div>
+  <h2>Employee Dashboard</h2>
+  <p>Welcome, employee!</p>
+  <button (click)="logout()">Logout</button>
+  
+  <div *ngFor="let employee of employees">
+    <a [routerLink]="['/employee', employee.emp_id]">{{ employee.emp_name }}</a>
+  </div>
+  
+  <h1>Employee List</h1>
+  <table>
+    <tr>
+      <th>Name</th>
+      <!-- <th>Manager</th> -->
+      <th>Email</th>
+      <th>Password</th>
+      <th>Department</th>
+      <th>Address</th>
+      <th>Gender</th>
+      <th>Date of Birth</th>
+      <th>Phone</th>
+      <th>Posting</th>
+    </tr>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.name }}</td>
+      <!-- <td>{{ employee.manager }}</td> -->
+      <td>{{ employee.email }}</td>
+      <td>{{ employee.password }}</td>
+      <td>{{ employee.dept }}</td>
+      <td>{{ employee.address }}</td>
+      <td>{{ employee.gender }}</td>
+      <td>{{ employee.dob }}</td>
+      <td>{{ employee.phone }}</td>
+      <td>{{ employee.posting }}</td>
+    </tr>
+  </table>
+
+  <h2>Add Employee</h2>
+  <form (ngSubmit)="addEmployee(name.value, email.value, password.value, dept.value, address.value, gender.value, dob.value, phone.value, posting.value)">
+    <label for="name">Name:</label>
+    <input id="name" type="text" name="name" #name required>
+
+    <!-- <br>
+    <label for="manager">Manager:</label>
+    <input id="manager" type="text" name="manager" #manager required>
+    <br> -->
+    <label for="email">Email:</label>
+    <input id="email" type="text" name="email" #email required>
+    <br>
+    <label for="password">Password:</label>
+    <input id="password" type="password" name="password" #password required>
+    <br>
+    <label for="dept">Department:</label>
+    <input id="dept" type="text" name="dept" #dept required>
+    <br>
+    <label for="address">Address:</label>
+    <input id="address" type="text" name="address" #address required>
+    <br>
+    <label for="gender">Gender:</label>
+    <input id="gender" type="text" name="gender" #gender required>
+    <br>
+    <label for="dob">Date of Birth:</label>
+    <input id="dob" type="date" name="dob" #dob required>
+    <br>
+    <label for="phone">Phone:</label>
+    <input id="phone" type="text" name="phone" #phone required>
+    <br>
+    <label for="posting">Posting:</label>
+    <input id="posting" type="text" name="posting" #posting required>
+    <br>
+    <button type="submit">Add Employee</button>
+  </form>
+</div>

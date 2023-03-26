@@ -1,0 +1,23 @@
+<div>
+  <h2>Login</h2>
+  <form (ngSubmit)="submitForm(loginForm)" #loginForm="ngForm">
+    <div>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" ngModel required>
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" ngModel required>
+    </div>
+    <div>
+      <label for="login-type">Login Type</label>
+      <select id="login-type" name="login-type" ngModel required>
+        <option value="">Select Login Type</option>
+        <option value="employee">Employee</option>
+        <option value="manager">Manager</option>
+        <option value="admin">Admin</option>
+      </select>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+</div>

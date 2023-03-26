@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+sqlalchemy
+passlib
+bcrypt
+python-jose
+python-multipart
+
+mysqlclient
+mysql-connector-python
+
+h11
+httpcore
+httpx
+
+flask
+flask_cors

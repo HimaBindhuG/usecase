@@ -1,0 +1,86 @@
+/* Apply some basic styles to the body and headings */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 32px;
+  }
+  
+  /* Style the table */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 16px;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #eee;
+    font-weight: bold;
+  }
+  
+  /* Style the buttons and forms */
+  button[type="submit"], input[type="submit"], input[type="button"] {
+    background-color: #b537a2;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover, input[type="submit"]:hover, input[type="button"]:hover {
+    background-color: #410832;
+  }
+  
+  form {
+    margin-top: 16px;
+  }
+  
+  /* Style the input and select fields */
+  label, input, select {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="text"], select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Style the unordered list */
+  ul {
+    margin-top: 16px;
+    padding: 0;
+    list-style: none;
+  }
+  
+  li {
+    margin-bottom: 8px;
+  }
+  
+  /* Style the logout button */
+  form:last-of-type {
+    margin-top: 16px;
+  }
+  

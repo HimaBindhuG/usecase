@@ -1,0 +1,25 @@
+<div>
+  <h2>Manager Dashboard</h2>
+  <p>Welcome, manager!</p>
+  <button (click)="logout()">Logout</button>
+
+  <h1>Employee List</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Manager</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.phone }}</td>
+        <td>{{ employee.manager }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

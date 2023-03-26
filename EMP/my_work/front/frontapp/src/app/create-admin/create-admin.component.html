@@ -1,0 +1,60 @@
+<form (submit)="onSubmit()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="admin.name" required>
+  
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="admin.email" required>
+  
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" [(ngModel)]="admin.password" required>
+  
+    <label for="dept">Department:</label>
+    <input type="text" id="dept" name="dept" [(ngModel)]="admin.dept" required>
+  
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" [(ngModel)]="admin.address" required>
+  
+    <label for="gender">Gender:</label>
+    <input type="text" id="gender" name="gender" [(ngModel)]="admin.gender" required>
+  
+    <label for="dob">Date of Birth:</label>
+    <input type="text" id="dob" name="dob" [(ngModel)]="admin.dob" required>
+  
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone" [(ngModel)]="admin.phone" required>
+  
+    <label for="posting">Posting:</label>
+    <input type="text" id="posting" name="posting" [(ngModel)]="admin.posting" required>
+  
+    <button type="submit">Create Admin</button>
+  </form>
+  
+
+<h2>Admins</h2>
+<ul>
+    <li *ngFor="let admin of admins">
+        {{admin.name}} ({{admin.email}})
+    </li>
+</ul>
+
+<hr>
+
+<h2>Managers</h2>
+<ul>
+    <li *ngFor="let manager of managers">
+        {{manager.mag_name}} ({{manager.email}})
+    </li>
+</ul>
+
+<hr>
+
+<h2>Employees</h2>
+<ul>
+    <li *ngFor="let employee of employees">
+        {{employee.emp_name}} ({{employee.email}})
+    </li>
+</ul>
+
+<form>
+    <input type="button" value="Logout" onclick="location.href='login-page.component.html';">
+  </form>

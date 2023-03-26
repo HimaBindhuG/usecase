@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <script src="login.js"></script>
+  </head>
+<body>
+  <h1>Login</h1>
+<form id="login-form" [formGroup]="loginForm" (submit)="login()">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" formControlName='username'><br><br>
+    <label for="password" >Password:</label>
+    <input type="password" id="password" name="password" formControlName="password"><br><br>
+    <div>
+      <label for="login-type">Login Type</label>
+      <select id="login-type" name="login-type" formControlName='logintype'>
+        <option value="">Select Login Type</option>
+        <option value="employee">Employee</option>
+        <option value="manager">Manager</option>
+        <option value="admin">Admin</option>
+      </select>
+    </div>
+    <button type="submit" (submit)="login()">Login</button>
+    <!-- <input type="button" value="I am Admin" onclick="location.href='admin-login.component.html';"> -->
+    <!-- <input type="button" value="I am Employee" onclick="location.href='employee-login.component.html';"> -->
+    <!-- <input type="button" value="I am Manager" onclick="location.href='manager-login.component.html';"> -->
+    <input type="button" value="Create Admin" onclick="location.href='create-admin.component.html';">
+  </form>
+  <br>
+  <form>
+    <input type="button" value="Homepage" onclick="location.href='homepage.component.html';">
+  </form>
+</body>
+</html>
+
+<!-- <h1>Login Page</h1>
+
+<form (ngSubmit)="onSubmit()">
+  <label>
+    Username:
+    <input type="text" name="username" [(ngModel)]="username">
+  </label>
+  <br>
+  <label>
+    Password:
+    <input type="password" name="password" [(ngModel)]="password">
+  </label>
+  <br>
+  <div>
+    <label for="login-type">Login Type</label>
+    <select id="login-type" name="login-type" ngModel required>
+      <option value="">Select Login Type</option>
+      <option value="employee">Employee</option>
+      <option value="manager">Manager</option>
+      <option value="admin">Admin</option>
+    </select>
+  </div>
+  <button type="submit">Login</button>
+</form> -->
+
+

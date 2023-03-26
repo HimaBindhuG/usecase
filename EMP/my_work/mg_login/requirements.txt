@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+sqlalchemy
+py_functions
+config
+pyodbc
+pandas
+pywhatkit
+passlib
+bcrypt
+
+
+#pip install -r requirements.txt

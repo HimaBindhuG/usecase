@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Login</title>
+    <script>
+      async function applyLeave() {
+        const leaveType = document.getElementById("leaveType").value;
+        const startDate = document.getElementById("startDate").value;
+        const endDate = document.getElementById("endDate").value;
+      
+        // Create a JSON object with the form data
+        const formData = {
+          leaveType: leaveType,
+          startDate: startDate,
+          endDate: endDate
+        };
+      
+        // Send a POST request to the backend API to store the data
+        const response = await fetch("http://localhost:8000/employee/leave", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData)
+        });
+      
+        if (!response.ok) {
+          throw new Error("Failed to apply for leave.");
+        }
+        
+        const data = await response.json();
+        // Handle the response from the backend if needed
+      }
+      
+      async function checkLeaveStatus() {
+        const leaveId = document.getElementById("leaveId").value;
+        
+        // Send a GET request to the backend API to retrieve the leave details
+        const response = await fetch(`http://localhost:8000/employee/leave/${leaveId}`);
+      
+        if (!response.ok) {
+          throw new Error("Failed to retrieve leave details.");
+        }
+      
+        const data = await response.json();
+        // Handle the response from the backend if needed
+      }
+      
+      async function checkTask() {
+        const taskId = document.getElementById("taskId").value;
+      
+        // Send a GET request to the backend API to retrieve the task details
+        const response = await fetch(`http://localhost:8000/employee/task/${taskId}`);
+      
+        if (!response.ok) {
+          throw new Error("Failed to retrieve task details.");
+        }
+      
+        const data = await response.json();
+        // Handle the response from the backend if needed
+      }
+      
+      async function updateTask() {
+        const taskId = document.getElementById("taskId").value;
+        const taskStatus = document.getElementById("taskStatus").value;
+      
+        // Create a JSON object with the updated task status
+        const formData = {
+          status: taskStatus
+        };
+      
+        // Send a PUT request to the backend API to update the task status
+        const response = await fetch(`http://localhost:8000/employee/task/${taskId}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData)
+        });
+      
+        if (!response.ok) {
+          throw new Error("Failed to update task status.");
+        }
+      
+        const data = await response.json();
+        // Handle the response from the backend if needed
+      }
+    </script>
+</head>
+<body>
+  <h1>Welcome Employee!</h1>
+  
+  <h2>Apply for Leave</h2>
+  <form>
+    <label for="leaveType">Leave Type:</label>
+    <select id="leaveType" name="leaveType">
+      <option value="casual">Casual Leave</option>
+      <option value="sick">Sick Leave</option>
+      <option value="paid">Paid Leave</option>
+    </select><br><br>
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" name="startDate"><br><br>
+    <label for="endDate">End Date:</label>
+    <input type="date" id="endDate" name="endDate"><br><br>
+    <input type="button" value="Apply" onclick="applyLeave()">
+  </form>
+  
+  <h2>Check Leave Status</h2>
+  <form>
+    <label for="leaveId">Leave ID:</label>
+    <input type="text" id="leaveId" name="leaveId"><br><br>
+    <input type="button" value="Check Status" onclick="checkLeaveStatus()">
+  </form>
+  
+  <h2>Check Task from Manager</h2>
+  <form>
+    <label for="taskId">Task ID:</label>
+    <input type="text" id="taskId" name="taskId"><br><br>
+    <input type="button" value="Check Task" onclick="checkTask()">
+  </form>
+  
+  <h2>Update Task Status</h2>
+  <form>
+    <label for="taskId">Task ID:</label>
+    <input type="text" id="taskId" name="taskId"><br><br>
+    <label for="taskStatus">Task Status:</label>
+    <select id="taskStatus" name="taskStatus">
+      <option value="in-progress">In Progress</option>
+      <option value="completed">Completed</option>
+    </select><br><br>
+    <input type="button" value="Update Status" onclick="updateTask()">
+  </form>
+
+  <button onclick="location.href='edit-profile.component.html';">Edit Profile</button>
+  <br>
+  <form>
+    <input type="button" value="Logout" onclick="location.href='login-page.component.html';">
+  </form>
+</body>
+</html>
